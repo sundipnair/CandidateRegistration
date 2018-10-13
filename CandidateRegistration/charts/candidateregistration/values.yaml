@@ -4,8 +4,8 @@
 fullnameOverride: candidateregistration
 replicaCount: 1
 image:
-  repository: candidateregistration
-  tag: stable
+  repository: sundipnair/candidateregistration
+  tag: latest
   pullPolicy: IfNotPresent
 imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.
@@ -15,7 +15,7 @@ imagePullSecrets: []
   # This uses credentials from secret "myRegistryKeySecretName".
   # - name: myRegistryKeySecretName
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
 
 probes:
