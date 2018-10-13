@@ -45,6 +45,8 @@ secrets: {}
   # as the environment variable mysecret_mypassword=password.
   # mysecret:
   #   mypassword: password
+  REDIS:
+    CONNECTIONSTRING: "redis-master:6379,password=asdlkj,ssl=False,abortConnect=False"
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
