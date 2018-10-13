@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "candidateregistration.fullname" . }}
+  labels:
+    app: {{ template "candidateregistration.name" . }}
+    chart: {{ template "candidateregistration.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "candidateregistration.name" . }}
+    release: {{ .Release.Name }}
