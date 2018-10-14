@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CandidateRegistration.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CandidateRegistration.Controllers
@@ -28,13 +29,14 @@ namespace CandidateRegistration.Controllers
         [HttpGet("{id}")]
         public ActionResult<Candidate> Get(int id)
         {
-            return new Candidate
-            {
-                Id = 1,
-                FirstName = "Bob",
-                LastName = "Builder",
-                Email = "bob@builder.com"
-            };
+            return new CandidateService().GetCandidate(id);
+            //return new Candidate
+            //{
+            //    Id = 1,
+            //    FirstName = "Bob",
+            //    LastName = "Builder",
+            //    Email = "bob@builder.com"
+            //};
         }
 
         // POST api/candidates
