@@ -15,14 +15,7 @@ namespace CandidateRegistration.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Candidate>> Get()
         {
-            Candidate candidate = new Candidate
-            {
-                Id = 1,
-                FirstName = "Bob",
-                LastName = "Builder",
-                Email = "bob@builder.com"
-            };
-            return new Candidate[] { candidate };
+            return new CandidateService().GetCandidates();
         }
 
         // GET api/candidates/5
@@ -30,31 +23,27 @@ namespace CandidateRegistration.Controllers
         public ActionResult<Candidate> Get(int id)
         {
             return new CandidateService().GetCandidate(id);
-            //return new Candidate
-            //{
-            //    Id = 1,
-            //    FirstName = "Bob",
-            //    LastName = "Builder",
-            //    Email = "bob@builder.com"
-            //};
         }
 
         // POST api/candidates
         [HttpPost]
         public void Post([FromBody] Candidate candidate)
         {
+            new CandidateService().CreateCandidate(candidate);
         }
 
         // PUT api/candidates/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Candidate candidate)
         {
+            new CandidateService().UpdateCandidate(id, candidate);
         }
 
         // DELETE api/candidates/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            new CandidateService().DeleteCandidate(id);
         }
     }
 }
