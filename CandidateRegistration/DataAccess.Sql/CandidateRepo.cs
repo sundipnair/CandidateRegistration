@@ -40,7 +40,7 @@ namespace CandidateRegistration.DataAccess.Sql
 
         internal void UpdateCandidate(int id, Candidate candidate)
         {
-            string sql = "update Email = @Email from BasicData where Id = @Id";
+            string sql = "update BasicData set Email = @Email where Id = @Id";
 
             using (var conn = new MySqlConnection(_connectionString))
             {
