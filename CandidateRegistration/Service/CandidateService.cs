@@ -27,9 +27,9 @@ namespace CandidateRegistration.Service
         internal void CreateCandidate(Candidate candidate)
         {
             // create on sql and redis
-            int id = new CandidateRepo().CreateCandidate(candidate);
+            //int id = new CandidateRepo().CreateCandidate(candidate);
 
-            new RedisDataAgent().SetStringValue($"candidate_{id}", JsonConvert.SerializeObject(candidate));
+            new RedisDataAgent().SetStringValue($"candidate_{100}", JsonConvert.SerializeObject(candidate));
         }
 
         internal ActionResult<IEnumerable<Candidate>> GetCandidates()
