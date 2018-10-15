@@ -16,7 +16,10 @@ namespace CandidateRegistration.Service
             // get from Redis
             string data = new RedisDataAgent().GetStringValue($"candidate_{id}");
 
-            return JsonConvert.DeserializeObject<Candidate>(data);
+            if (!String.IsNullOrWhiteSpace(data))
+                return JsonConvert.DeserializeObject<Candidate>(data);
+            else
+                return null;
         }
 
         internal void CreateCandidate(Candidate candidate)
