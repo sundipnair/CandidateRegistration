@@ -1,4 +1,5 @@
 ﻿using StackExchange.Redis;
+using System;
 using System.Collections.Generic;
 
 namespace CandidateRegistration.DataAccess.Redis
@@ -21,7 +22,10 @@ namespace CandidateRegistration.DataAccess.Redis
 
         public void SetStringValue(string key, string value)
         {
-            _database.StringSet(key, value);
+            bool res = _database.StringSet(key, value);
+
+            if (!res)
+                throw new Exception("Not Cached");
         }
 
         public void UpdateStringValue(string key, string value)
