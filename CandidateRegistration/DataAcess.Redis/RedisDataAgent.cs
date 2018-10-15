@@ -19,12 +19,17 @@ namespace CandidateRegistration.DataAccess.Redis
             return _database.StringGet(key);
         }
 
-        public void SetListValue(string key, string value)
+        public void SetStringValue(string key, string value)
         {
             _database.StringSet(key, value);
         }
 
-        public void DeleteListValue(string key)
+        public void UpdateStringValue(string key, string value)
+        {
+            _database.StringSet(key, value);
+        }
+
+        public void DeleteKey(string key)
         {
             _database.KeyDelete(key);
         }

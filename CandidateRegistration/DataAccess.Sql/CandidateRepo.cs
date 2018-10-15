@@ -62,14 +62,18 @@ namespace CandidateRegistration.DataAccess.Sql
             return candidates;
         }
 
-        internal void CreateCandidate(Candidate candidate)
+        internal int CreateCandidate(Candidate candidate)
         {
-            string sql = "insert into BasicData (FirstName, LastNAme, Email) values (@FirstName, @LastNAme, @Email)";
+            int id;
+            string sql = @" insert into BasicData (FirstName, LastName, Email) values (@FirstName, @LastNAme, @Email);
+                            select cast(last_insert_id() as int)";
 
             using (var conn = new MySqlConnection(_connectionString))
             {
-                conn.Execute(sql, new { FirstName = candidate.FirstName, LastName = candidate.LastName, Email = candidate.Email });
+                id = conn.Query<int>(sql, new { FirstName = candidate.FirstName, LastName = candidate.LastName, Email = candidate.Email }).Single();
             }
+
+            return id;
         }
 
         internal Candidate GetCandidate(int id)
