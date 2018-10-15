@@ -22,10 +22,12 @@ namespace CandidateRegistration.DataAccess.Redis
 
         public void SetStringValue(string key, string value)
         {
-            bool res = _database.StringSet(key, value);
+            bool res = _database.StringSet(key, value, null, When.Always, CommandFlags.None);
 
             if (!res)
                 throw new Exception("Not Cached");
+            else
+                throw new Exception("Cached Updated");
         }
 
         public void UpdateStringValue(string key, string value)
