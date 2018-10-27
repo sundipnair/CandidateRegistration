@@ -48,7 +48,7 @@ secrets:
   REDIS:
     CONNECTIONSTRING: "redis-master:6379,password=asdlkj,ssl=False,abortConnect=False"
   MYSQL:
-    CONNECTIONSTRING: "Server=test-mysql;Port=3306;Database=Candidate;Uid=sundip;Pwd=asdlkj;"
+    CONNECTIONSTRING: "Server=test-mysql;Port=3306;Database=Candidate;Uid=sundip;Pwd=asdlkj12345;"
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
