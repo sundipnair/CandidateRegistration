@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="0.18.1779678" />
     <PackageReference Include="MySqlConnector" Version="0.46.0" />
     <PackageReference Include="StackExchange.Redis" Version="2.0.513" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
