@@ -45,5 +45,11 @@ namespace CandidateRegistration.Controllers
         {
             new CandidateService().DeleteCandidate(id);
         }
+
+        [HttpGet("Test")]
+        public string Test()
+        {
+            return "Test String";
+        }
     }
 }
