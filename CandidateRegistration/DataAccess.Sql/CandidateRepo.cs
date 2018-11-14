@@ -66,7 +66,7 @@ namespace CandidateRegistration.DataAccess.Sql
         {
             int id;
             string sql = @" insert into BasicData (FirstName, LastName, Email) values (@FirstName, @LastNAme, @Email);
-                            select cast(last_insert_id() as int)";
+                            select last_insert_id()";
 
             using (var conn = new MySqlConnection(_connectionString))
             {
