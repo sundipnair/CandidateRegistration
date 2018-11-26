@@ -1,5 +1,6 @@
 ﻿using CandidateRegistration.DataAccess.Redis;
-using CandidateRegistration.DataAccess.Sql;
+//using CandidateRegistration.DataAccess.Sql;
+using CandidateRegistration.DataAccess.PostGreSql;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
