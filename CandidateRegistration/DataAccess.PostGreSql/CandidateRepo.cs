@@ -12,7 +12,7 @@ namespace CandidateRegistration.DataAccess.PostGreSql
     public class CandidateRepo
     {
         private string _connectionString;
-        private static readonly string MYSQL_CONNECTIONSTRING = "MYSQL_CONNECTIONSTRING";
+        private static readonly string MYSQL_CONNECTIONSTRING = "POSTGRE_CONNECTIONSTRING";
 
         public CandidateRepo()
         {
